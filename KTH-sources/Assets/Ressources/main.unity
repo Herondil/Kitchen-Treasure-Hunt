@@ -328,9 +328,10 @@ GameObject:
   - 114: {fileID: 911900200}
   - 114: {fileID: 911900199}
   - 114: {fileID: 911900198}
+  - 114: {fileID: 911900202}
   m_Layer: 0
   m_Name: Basic
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,6 +448,18 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &911900202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: 7a9d8b73f0a103c4ba9890c34734bb40,
+    type: 2}
+  m_PrefabInternal: {fileID: 1111406843}
+  m_GameObject: {fileID: 911900196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576cc0f97b0cf47db9b94bc2af13b032, type: 3}
+  m_Name: 
+  shield: 0
 --- !u!1001 &1111406843
 Prefab:
   m_ObjectHideFlags: 0
@@ -505,7 +518,7 @@ GameObject:
   - 114: {fileID: 1127968477}
   m_Layer: 0
   m_Name: MainSceneManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -803,6 +816,139 @@ Prefab:
   m_RootGameObject: {fileID: 2144165274}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1819310601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1819310605}
+  - 33: {fileID: 1819310604}
+  - 135: {fileID: 1819310603}
+  - 23: {fileID: 1819310602}
+  - 114: {fileID: 1819310606}
+  - 114: {fileID: 1819310607}
+  - 114: {fileID: 1819310608}
+  - 114: {fileID: 1819310609}
+  - 114: {fileID: 1819310610}
+  m_Layer: 0
+  m_Name: Test collectible
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1819310602
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!135 &1819310603
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1819310604
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1819310605
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20, y: 1, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &1819310606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16215cc778d884355a0cfc72dccca733, type: 3}
+  m_Name: 
+  displayedName: 
+  strength: 1
+  mazeTag: Maze
+--- !u!114 &1819310607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5e83ca92f8b4f7494d7a87d196957a, type: 3}
+  m_Name: 
+  displayedName: 
+--- !u!114 &1819310608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d756cb0c171f471a86f97c10637e95c, type: 3}
+  m_Name: 
+  displayedName: 
+  pointsValue: 0
+  family: 
+--- !u!114 &1819310609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c12d87f3f9b46f7a6a9bbf3d0c17d1, type: 3}
+  m_Name: 
+  displayedName: 
+  strength: 0
+--- !u!114 &1819310610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819310601}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb568642e1fe047f18da54d16247f11e, type: 3}
+  m_Name: 
+  displayedName: 
+  timeToAdd: 0
+  sceneManagerTag: 
 --- !u!1 &2144165274
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +961,7 @@ GameObject:
   - 154: {fileID: 2144165275}
   m_Layer: 0
   m_Name: Jungle
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
