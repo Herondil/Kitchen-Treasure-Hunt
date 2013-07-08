@@ -6,3 +6,9 @@
 *.csproj
 *.unityproj
 *.sln
+*.pidb
+*.userprefs
+
+#Asset Bundles
+*.unity3d
+*.unity3d.meta
