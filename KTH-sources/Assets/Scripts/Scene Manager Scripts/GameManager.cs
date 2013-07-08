@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour {
 	public GUIStyle timeStyle;
 	
 	//the asset of the run
-	public GameObject  Player,
-					   Maze;
+	public GameObject  	player,
+					  	cube,
+					   	maze;
 	
 	public Texture2D map;
 	
@@ -24,15 +25,22 @@ public class GameManager : MonoBehaviour {
 	void OnEnable(){
 		timeElapsed    = 0f;
 		currentRunTime = runTimeLength;
-		//GameObject.Instantiate(Player,new Vector3(0,5,20),Quaternion.identity);
+		GameObject.Instantiate(player,new Vector3(0,5,20),Quaternion.identity);
 		GenerateMap();
-		GameObject.Instantiate(Maze,new Vector3(-1000,0,0),Quaternion.identity);
+		GameObject.Instantiate(maze,new Vector3(-1000,0,-1000),Quaternion.identity);
 	}
 	
 	void GenerateMap(){
-		for(int i = 0; i < 100; i++){
-			for(int j = 0; j < 100; j++){
-			
+		for(int x = 0; x < 100; x++){
+			for(int y = 0; y < 100; y++){
+				
+				
+				Color pixColor = map.GetPixel(x,y);
+				
+				
+				if(pixColor == Color.black){
+					Instantiate(this.cube, new Vector3(x, 0, y), Quaternion.identity);
+				}
 			}
 		}
 	}
