@@ -14,21 +14,27 @@ public class GameManager : MonoBehaviour {
 	public GameObject  Player,
 					   Maze;
 	
+	public Texture2D map;
+	
 	//the instances
 	
 	float timeElapsed,
 		  currentRunTime;
 	
-	
-	// Use this for initialization
-	void Start () {
-	}
-	
 	void OnEnable(){
 		timeElapsed    = 0f;
 		currentRunTime = runTimeLength;
-		GameObject.Instantiate(Player,new Vector3(0,5,20),Quaternion.identity);
+		//GameObject.Instantiate(Player,new Vector3(0,5,20),Quaternion.identity);
+		GenerateMap();
 		GameObject.Instantiate(Maze,new Vector3(-1000,0,0),Quaternion.identity);
+	}
+	
+	void GenerateMap(){
+		for(int i = 0; i < 100; i++){
+			for(int j = 0; j < 100; j++){
+			
+			}
+		}
 	}
 	
 	// Update is called once per frame
