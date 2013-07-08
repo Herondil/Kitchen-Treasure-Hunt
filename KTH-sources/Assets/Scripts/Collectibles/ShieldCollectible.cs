@@ -21,6 +21,8 @@ public class ShieldCollectible : AbstractCollectible, CollectibleInterface {
 		
 		inventory.shield += strength;
 		
+		Debug.Log (inventory.shield);
+		
 		Destroy(gameObject);
 	}
 }

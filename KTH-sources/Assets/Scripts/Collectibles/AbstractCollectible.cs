@@ -7,9 +7,11 @@ public abstract class AbstractCollectible : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider other) {
 		
+		Debug.Log (other.tag);
+		
 		if (other.tag == "Player") {
 			
-			other.SendMessage("OnLoot", other.gameObject);
+			SendMessage("OnLoot", other.gameObject);
 		}
 	}
 }

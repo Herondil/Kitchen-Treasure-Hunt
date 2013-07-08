@@ -40,14 +40,18 @@ public class Inventory : MonoBehaviour {
 			strength -= shield;
 		}
 		
-		while (strength > 0) {
+		if(inventory.Count > 0) {
+			while (strength > 0) {
+				
+				int index = Random.Range(0, inventory.Count - 1);
 			
-			int index = Random.Range(0, inventory.Count - 1);
-		
-			inventory.RemoveAt(index);
-			
-			strength--;
+				inventory.RemoveAt(index);
+				
+				strength--;
+			}
 		}
+		
+		Debug.Log(inventory.Count);
 		
 	}
 	
