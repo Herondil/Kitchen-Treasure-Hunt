@@ -10,17 +10,27 @@ public class GameManager : MonoBehaviour {
 	public Rect  timeRect;
 	public GUIStyle timeStyle;
 	
+	//the asset of the run
+	public GameObject  Player,
+					   Maze;
+	
+	//the instances
+	
 	float timeElapsed,
 		  currentRunTime;
 	
+	
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	void OnEnable(){
 		timeElapsed    = 0f;
 		currentRunTime = runTimeLength;
+		
+		//we activate all the prefabs
+		GameObject.Instantiate(Player,new Vector3(0,5,20),Quaternion.identity);
+		GameObject.Instantiate(Maze,new Vector3(-1000,0,0),Quaternion.identity);
 	}
 	
 	// Update is called once per frame
