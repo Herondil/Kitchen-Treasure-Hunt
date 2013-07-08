@@ -37,21 +37,30 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4.1.5f1/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4.1.5f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CachingLoadExample.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\AbstractCollectible.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\CollectibleInterface.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\EndCollectible.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\Monster.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\PointsCollectible.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\ShieldCollectible.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\TimeCollectible.cs" />
+     <Compile Include="Assets\Scripts\Player\GatheredItem.cs" />
+     <Compile Include="Assets\Scripts\Player\Inventory.cs" />
      <Compile Include="Assets\Scripts\Scene Manager Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Scene Manager Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\Scene Manager Scripts\SceneManager.cs" />
      <Compile Include="Assets\Scripts\Scene Manager Scripts\ScoreManager.cs" />
      <Compile Include="Assets\WWWRequests\Leaderboard.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
- <Reference Include="ICSharpCode.SharpZipLib">
+ <Reference Include="Assets\Plugins\ICSharpCode.SharpZipLib">
  <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
   </ItemGroup>

@@ -259,9 +259,10 @@ GameObject:
   - 114: {fileID: 911900200}
   - 114: {fileID: 911900199}
   - 114: {fileID: 911900198}
+  - 114: {fileID: 911900202}
   m_Layer: 0
   m_Name: Basic
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,6 +379,18 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &911900202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: 7a9d8b73f0a103c4ba9890c34734bb40,
+    type: 2}
+  m_PrefabInternal: {fileID: 1111406843}
+  m_GameObject: {fileID: 911900196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576cc0f97b0cf47db9b94bc2af13b032, type: 3}
+  m_Name: 
+  shield: 0
 --- !u!1001 &1111406843
 Prefab:
   m_ObjectHideFlags: 0
@@ -436,7 +449,7 @@ GameObject:
   - 114: {fileID: 1127968477}
   m_Layer: 0
   m_Name: MainSceneManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -700,7 +713,7 @@ GameObject:
   - 154: {fileID: 2144165275}
   m_Layer: 0
   m_Name: Jungle
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

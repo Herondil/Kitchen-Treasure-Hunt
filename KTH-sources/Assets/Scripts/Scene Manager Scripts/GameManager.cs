@@ -49,4 +49,10 @@ public class GameManager : MonoBehaviour {
 	void OnGUI(){
 		GUI.Label(timeRect,"Time left : "+ currentRunTime.ToString("0.0"),timeStyle);
 	}
+	
+	
+	public void AddTime (float time) {
+		
+		currentRunTime += time;
+	}
 }

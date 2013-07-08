@@ -37,17 +37,17 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4.1.5f1/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4.1.5f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Plugins\SimpleJSON.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
- <Reference Include="ICSharpCode.SharpZipLib">
+ <Reference Include="Assets\Plugins\ICSharpCode.SharpZipLib">
  <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
   </ItemGroup>
