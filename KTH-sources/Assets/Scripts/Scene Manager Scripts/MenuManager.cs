@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour {
 	
 	void OnGUI(){
 		if (GUI.Button(playButton,"Play"))
-            Debug.Log("Clicked the button with text");
+			this.GetComponent<SceneManager>().StartRun();
 		if (GUI.Button(leaderboardButton,"Leaderboard"))
             Debug.Log("Clicked the button with text");
 		if (GUI.Button(extraButton ,"Extra"))
