@@ -12,6 +12,9 @@ public class Leaderboard : MonoBehaviour {
 	void Start () {
 		
 		GetLeaderboard();
+		
+		// TEST
+		AddEntryToLeaderboard("TOTO", 99999999);
 	}
 	
 	public delegate void OnServerResponse (string response);
