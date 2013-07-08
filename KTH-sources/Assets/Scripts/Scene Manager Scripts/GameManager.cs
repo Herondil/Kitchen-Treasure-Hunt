@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 				Color pixColor = map.GetPixel(x,y);
 				
 				if(pixColor == Color.green){
-					playerStartPos = new Vector3(x, 5, y);
+					playerStartPos = new Vector3(x, 1, y);
 				}
 				if(pixColor == Color.black){
 					Instantiate(this.cube, new Vector3(x, 0, y), Quaternion.identity);
