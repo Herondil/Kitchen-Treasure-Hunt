@@ -119,6 +119,9 @@ public class GameManager : MonoBehaviour {
 				if(pixColor == Color.black){
 					Instantiate(this.cube, new Vector3(x, 0, y), Quaternion.identity);
 				}
+				
+				// On fait l'instanciation des collectibles
+				GetComponent<CollectibleManager>().GenerateCollectible(pixColor, x, y);
 			}
 		}
 	}

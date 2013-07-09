@@ -2,10 +2,10 @@ using System;
 
 public class GatheredItem {
 
-	string name,
-		   family;
+	public string name,
+		   		  family;
 	
-	int points;
+	public int points;
 	
 	public GatheredItem (string name, string family, int points) {
 		

@@ -16,5 +16,10 @@ public class EndCollectible : AbstractCollectible, CollectibleInterface {
 	public void OnLoot (GameObject player) {
 		
 		// Lancer ici la fin du niveau
+		GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+		
+		controller.GetComponent<SceneManager>().EndRun();
+		
+		Destroy(gameObject);
 	}
 }

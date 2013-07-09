@@ -7,10 +7,16 @@ public class Leaderboard : MonoBehaviour {
 	
 	public string addEntryToLeaderboardURL;
 	public string getLeaderboardURL;
+	public string getLastScoreURL;
 	
+	public Rect leaderboardListGUI;
+	
+	ScoreManager score;
 	
 	// Use this for initialization
 	void Start () {
+		
+		score = GetComponent<ScoreManager>();
 		
 		GetLeaderboard();
 		
@@ -35,7 +41,7 @@ public class Leaderboard : MonoBehaviour {
         }    
     }
 	
-	void AddEntryToLeaderboard (string name, int score) {
+	public void AddEntryToLeaderboard (string name, int score) {
 		
 		WWWForm form = new WWWForm ();
 		
@@ -47,10 +53,17 @@ public class Leaderboard : MonoBehaviour {
         
 	}
 	
-	void GetLeaderboard () {
+	public void GetLeaderboard () {
 		
 		WWW www = new WWW(getLeaderboardURL);
         StartCoroutine(WaitForRequest(www, ParseLeaderboard));
+		
+	}
+	
+	public void GetLastScore () {
+		
+		WWW www = new WWW(getLastScoreURL);
+        StartCoroutine(WaitForRequest(www, ReturnLastScore));
 		
 	}
 	
@@ -61,9 +74,23 @@ public class Leaderboard : MonoBehaviour {
 		
 		var test = JSON.Parse(response);
 		
+		int j = 0;
+		
 		foreach (var i in test.Childs) {
 			
 			Debug.Log (i["name"].Value+" : "+i["score"].Value);
+			
+			float x = leaderboardListGUI.x;
+			float y = leaderboardListGUI.y + (j*leaderboardListGUI.height);
+			float w = leaderboardListGUI.width;
+			float h = leaderboardListGUI.height;
+			
+			GUI.Label(
+				new Rect(x, y, w, h)
+				,i["name"].Value+" : "+i["score"].Value
+			);
+			
+			j++;
 		}
 		
 	}
@@ -73,5 +100,10 @@ public class Leaderboard : MonoBehaviour {
 		Debug.Log ("Entry Added");
 		
 		// execute le code
+	}
+	
+	void ReturnLastScore (string response) {
+		
+		score.SendMessage("OnLastScoreRecovered", int.Parse (response));
 	}
 }

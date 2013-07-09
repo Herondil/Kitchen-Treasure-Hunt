@@ -4,9 +4,9 @@ class Leaderboard {
 
 	private $saveFile = './leaderboard.txt';
 	
-	private $leaderboard = array();
+	public $leaderboard = array();
 	
-	private $size = 10;
+	public $size = 10;
 	
 	
 	public function fetchFromSaveFile() {
