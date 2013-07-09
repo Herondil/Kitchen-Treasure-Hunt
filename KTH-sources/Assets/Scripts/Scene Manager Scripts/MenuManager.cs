@@ -30,11 +30,13 @@ public class MenuManager : MonoBehaviour {
     public string[] selStrings = new string[] {"Jungle", "Cavern", "Temple", "Pyramid", "Titanic"};
 	
 	//component
+	/*
 	AssetLoader assetLoader;
 	
 	void Awake(){
 		assetLoader = this.GetComponent<AssetLoader>();
 	}
+	*/
 	
 	
 	// Use this for initialization
@@ -47,26 +49,26 @@ public class MenuManager : MonoBehaviour {
 	
 	void OnGUI(){
 		if (GUI.Button(playJungleButton,"Play Jungle"))
-			this.GetComponent<SceneManager>().StartRun();
+			this.GetComponent<SceneManager>().StartRun(levelList.JUNGLE);
 		
 		if(PlayerPrefs.GetString("HasUnlockedCavern") == "yes"){
 			if (GUI.Button(playCavernButton,"Play Cavern"))
-				this.GetComponent<SceneManager>().StartRun();
+				this.GetComponent<SceneManager>().StartRun(levelList.CAVERN);
 		}
 		
 		if(PlayerPrefs.GetString("HasUnlockedTemple") == "yes"){
 			if (GUI.Button(playTempleButton,"Play Temple"))
-				this.GetComponent<SceneManager>().StartRun();
+				this.GetComponent<SceneManager>().StartRun(levelList.TEMPLE);
 		}
 			
 		if(PlayerPrefs.GetString("HasUnlockedPyramid") == "yes"){
 			if (GUI.Button(playPyramidButton,"Play Pyramid"))
-				this.GetComponent<SceneManager>().StartRun();
+				this.GetComponent<SceneManager>().StartRun(levelList.PYRAMID);
 		}
 			
 		if(PlayerPrefs.GetString("HasUnlockedTitanic") == "yes"){
 			if (GUI.Button(playTitanicButton,"Play Titanic"))
-				this.GetComponent<SceneManager>().StartRun();
+				this.GetComponent<SceneManager>().StartRun(levelList.TITANIC);
 		}
 		
 		
@@ -110,7 +112,7 @@ public class MenuManager : MonoBehaviour {
 			
 		if(PlayerPrefs.GetString("HasUnlockedTitanic") == ""){
 			if (GUI.Button(unlockTitanic,"unlockTitanic")){
-				assetLoader.LoadMap(levelList.TITANIC);
+				//assetLoader.LoadMap(levelList.TITANIC);
 				PlayerPrefs.SetString("HasUnlockedTitanic", "yes");
 			}
 		}

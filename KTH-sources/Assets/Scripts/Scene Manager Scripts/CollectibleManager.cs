@@ -13,6 +13,10 @@ public class CollectibleManager : MonoBehaviour {
 		if(pixColor == Color.red){
 			Instantiate(this.exit, new Vector3(x, 0, y), Quaternion.identity);
 		}
+		
+		if(pixColor == Color.cyan){
+			Instantiate(this.fourchette, new Vector3(x, 0, y), Quaternion.identity);
+		}
 	}
 	
 	

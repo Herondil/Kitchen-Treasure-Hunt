@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
 	
-	public Rect scoreRect;
+	public Rect scoreRect, returnRect;
 	
 	ArrayList familles;
 	int points = 0;
@@ -53,6 +53,13 @@ public class ScoreManager : MonoBehaviour {
 				leaderboard.AddEntryToLeaderboard(pseudo, points);
 			}
 		}
+		else {
+			
+			if (GUI.Button(returnRect,"Back")){
+				this.GetComponent<SceneManager>().ReturnToMenu();
+			}
+		}
+		
 	}
 	
 	public int CalculateTotalPoints (Inventory inventory) {
@@ -80,6 +87,11 @@ public class ScoreManager : MonoBehaviour {
 				}
 			}
 		}
+		
+		// Temps restant
+		float time = GetComponent<GameManager>().GetRunTime();
+		
+		points += Mathf.RoundToInt(time * 500);
 		
 		
 		return points;

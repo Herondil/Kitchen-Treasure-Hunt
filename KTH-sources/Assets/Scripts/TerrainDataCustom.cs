@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TerrainData : MonoBehaviour{
+public class TerrainDataCustom : MonoBehaviour{
 
 	public Texture2D map; 
 }

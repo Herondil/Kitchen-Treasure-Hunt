@@ -20,9 +20,9 @@ public class SceneManager : MonoBehaviour {
 	/// <summary>
 	/// Starts the run.
 	/// </summary>
-	public void StartRun(){
+	public void StartRun(levelList levelIndex){
 		menuScript.enabled = false;
-		gameScript.enabled = true;
+		gameScript.StartMap(levelIndex);
 	}
 	
 	/// <summary>
@@ -34,5 +34,13 @@ public class SceneManager : MonoBehaviour {
 		
 		GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMotor>().canControl = false;
 		GameObject.FindGameObjectWithTag("Player").GetComponent<MouseLook>().enabled = false;
+	}
+	
+	public void ReturnToMenu(){
+		/*
+		menuScript.enabled  = true;
+		scoreScript.enabled = false;
+		*/
+		Application.LoadLevel(Application.loadedLevel);
 	}
 }

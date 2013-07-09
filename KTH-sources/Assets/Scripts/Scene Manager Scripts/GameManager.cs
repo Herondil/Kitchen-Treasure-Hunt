@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour {
 					  	cube,
 					   	mazeGround;
 	
-	public Texture2D map;
+	public Texture2D jungleMap;
+	
+	Texture2D map;
 	
 	//the instances
 	
@@ -23,6 +25,76 @@ public class GameManager : MonoBehaviour {
 		  currentRunTime;
 	
 	Vector3 playerStartPos;
+	
+	
+	AssetLoader assetLoader;
+	
+	void Awake(){
+		assetLoader = this.GetComponent<AssetLoader>();
+	}
+	
+	
+	/// <summary>
+	/// Starts the jungleMap.
+	/// </summary>
+	public void StartMap(levelList index){
+		///load good jungleMap
+		
+		
+		/*
+		assetLoader.LoadMap(index,  () => { 
+			//wait = false;
+			
+			Debug.Log("load ok");
+			
+			switch(index){
+				case levelList.TITANIC:{
+				
+					if(GameObject.Find("Titanic(Clone)")){
+						Debug.Log("Object found");
+						//this.map = GameObject.Find("Titanic(Clone)").GetComponent<TerrainData>().map;
+					}else{
+						Debug.Log("Object not found");
+					}
+					this.map = GameObject.Find("Titanic(Clone)").GetComponent<TerrainData>().map;
+					break;
+				}
+				case levelList.JUNGLE:{
+					//default map
+					this.map = jungleMap;
+					break;
+				}
+			}
+			
+			//this.enabled = true;
+		});
+		*/
+		
+		
+		
+		
+		
+		switch(index){
+			case levelList.TITANIC:{
+			
+				if(GameObject.Find("Titanic(Clone)").GetComponent<TerrainDataCustom>()){
+					Debug.Log("Object found");
+				}else{
+					Debug.Log("Object not found");
+				}
+					this.map = GameObject.Find("Titanic(Clone)").GetComponent<TerrainDataCustom>().map;
+				break;
+			}
+			case levelList.JUNGLE:{
+				//default map
+				this.map = jungleMap;
+				break;
+			}
+		}
+		
+		this.enabled = true;
+		
+	}
 	
 	void OnEnable(){
 		timeElapsed    = 0f;
@@ -33,14 +105,16 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void GenerateMap(){
+		Debug.Log("generation start");
 		for(int x = 0; x < 100; x++){
 			for(int y = 0; y < 100; y++){
 				
-				
 				Color pixColor = map.GetPixel(x,y);
+				//Debug.Log("pix spoted r "+pixColor.r);
 				
 				if(pixColor == Color.green){
 					playerStartPos = new Vector3(x, 1, y);
+					Debug.Log("find start pos");	
 				}
 				if(pixColor == Color.black){
 					Instantiate(this.cube, new Vector3(x, 0, y), Quaternion.identity);
@@ -75,5 +149,10 @@ public class GameManager : MonoBehaviour {
 	public void AddTime (float time) {
 		
 		currentRunTime += time;
+	}
+	
+	public float GetRunTime () {
+		
+		return currentRunTime;
 	}
 }

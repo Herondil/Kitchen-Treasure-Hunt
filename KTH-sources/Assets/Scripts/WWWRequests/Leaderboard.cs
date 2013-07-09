@@ -109,7 +109,7 @@ public class Leaderboard : MonoBehaviour {
 		
 		Debug.Log ("Entry Added");
 		
-		// execute le code
+		this.GetComponent<SceneManager>().ReturnToMenu();
 	}
 	
 	void ReturnLastScore (string response) {
