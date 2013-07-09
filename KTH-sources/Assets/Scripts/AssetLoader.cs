@@ -17,11 +17,15 @@ public class AssetLoader : MonoBehaviour {
 	
 	private string url;
 	
+	AssetBundle titanicBundle;
+	
 	void Start() {
 		//StartCoroutine (DownloadAndCache());
 		
 		//if not already loaded
-		LoadMap(levelList.TITANIC, () => { });
+		if(AssetBundleDictionnary.getAssetBundle(titanicURL, version) == null){
+			LoadMap(levelList.TITANIC, () => { });
+		}
 	}
 	
 	// 0 titanic
@@ -49,6 +53,7 @@ public class AssetLoader : MonoBehaviour {
 			if (www.error != null)
 				throw new Exception("WWW download had an error:" + www.error);
 			AssetBundle bundle = www.assetBundle;
+			titanicBundle = bundle;
 			if (AssetName == ""){
 				Debug.Log("Object instanciation");
 				Instantiate(bundle.mainAsset);
@@ -61,5 +66,9 @@ public class AssetLoader : MonoBehaviour {
 			
 			callback();
 		}
+	}
+	
+	public void Unload(){
+		titanicBundle.Unload(true);
 	}
 }

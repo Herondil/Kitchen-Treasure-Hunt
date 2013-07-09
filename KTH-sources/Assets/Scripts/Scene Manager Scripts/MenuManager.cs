@@ -30,9 +30,9 @@ public class MenuManager : MonoBehaviour {
     public string[] selStrings = new string[] {"Jungle", "Cavern", "Temple", "Pyramid", "Titanic"};
 	
 	//component
-	/*
 	AssetLoader assetLoader;
 	
+	/*
 	void Awake(){
 		assetLoader = this.GetComponent<AssetLoader>();
 	}
