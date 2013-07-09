@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour {
 	void Start () {
 		
 		inventory = new ArrayList();
+		
+		// TESTS
+		inventory.Add (new GatheredItem("Fourchette de Kui-Yere-Daur", "Set de table de Kui-Yere-Daur", 1000));
+		inventory.Add (new GatheredItem("Assiette de Kui-Yere-Daur", "Set de table de Kui-Yere-Daur", 3000));
 	}
 	
 	// Update is called once per frame

@@ -9,13 +9,27 @@ public class ScoreManager : MonoBehaviour {
 	int points = 0;
 	Hashtable familleCompletion;
 	
+	Leaderboard leaderboard;
+	
 	// Use this for initialization
 	void Start () {
+		
+		familles = new ArrayList();
+		familleCompletion = new Hashtable();
 		
 		familles.Add (new Famille ("Set de table de Kui-Yere-Daur", 10000, new string[3] {"Fourchette de Kui-Yere-Daur", "Assiette de Kui-Yere-Daur", "Couteau de Kui-Yere-Daur"}));
 		familleCompletion["Set de table de Kui-Yere-Daur"] = 0;
 		familles.Add (new Famille ("Poêles jumelles légendaires", 12000, new string[2] {"Poêle à frire de Raie-Ponsse", "Poêle à crèpes de Shande L'Heure"}));
 		familleCompletion["Poêles jumelles légendaires"] = 0;
+		
+		leaderboard = GetComponent<Leaderboard>();
+		
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		
+		CalculateTotalPoints(player.GetComponent<Inventory>());
+		
+		// On récupère les infos
+		leaderboard.GetLastScore();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +38,8 @@ public class ScoreManager : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		GUI.Label(scoreRect,"Score");
+		
+		GUI.Label(scoreRect,"Score : "+points);
 	}
 	
 	public int CalculateTotalPoints (Inventory inventory) {
@@ -53,5 +68,15 @@ public class ScoreManager : MonoBehaviour {
 		
 		
 		return points;
+	}
+	
+	public void OnLastScoreRecovered (int score) {
+		
+		Debug.Log(score);
+		
+		if(score <= points) {
+			
+			// Afficher un input pour entrer son nom
+		}
 	}
 }
