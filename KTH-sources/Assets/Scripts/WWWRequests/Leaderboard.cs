@@ -27,7 +27,7 @@ public class Leaderboard : MonoBehaviour {
 		//AddEntryToLeaderboard("TOTO", 99999999);
 	}
 	
-	void OnGUI() {
+	public void DrawGUI() {
 		
 		if(leaderboardResponse.Length > 0) {
 			

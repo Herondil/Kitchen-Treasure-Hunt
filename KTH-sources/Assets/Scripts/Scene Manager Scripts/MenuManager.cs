@@ -74,18 +74,21 @@ public class MenuManager : MonoBehaviour {
 		
 		
 		if (GUI.Button(leaderboardButton,"Leaderboard")) {
-			
 			GetComponent<Leaderboard>().GetLeaderboard();
+			drawLeaderBoard = !drawLeaderBoard;
 		}
 		if (GUI.Button(extraButton ,"Extra"))
             drawExtra = !drawExtra;
 		
-		//if(drawLeaderBoard) DrawLeaderBoard();
+		if(drawLeaderBoard) DrawLeaderBoard();
 		if(drawExtra) DrawExtra();
 	}
 	
+	public Leaderboard lb;
+	
 	void DrawLeaderBoard(){
 		GUI.Label(leaderboardRect,"LeaderBoard");
+		lb.DrawGUI();
 		
 	}
 	
