@@ -460,6 +460,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576cc0f97b0cf47db9b94bc2af13b032, type: 3}
   m_Name: 
   shield: 0
+--- !u!1001 &1058155443
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.53921366
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .863366127
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.11204243
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+  m_RootGameObject: {fileID: 1902956262}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1111406843
 Prefab:
   m_ObjectHideFlags: 0
@@ -792,6 +832,7 @@ GameObject:
   - 114: {fileID: 1894208484}
   - 114: {fileID: 1894208483}
   - 114: {fileID: 1894208482}
+  - 114: {fileID: 1894208487}
   m_Layer: 0
   m_Name: MainSceneManager
   m_TagString: GameController
@@ -1021,6 +1062,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1894208487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1894208481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55401b4064ff154429695c80b83e60b3, type: 3}
+  m_Name: 
+  BundleURL:
+  - http://perrineboissieres.com/kitchen-treasure-hunt/bundles/titanic.unity3d
+  - 
+  - 
+  - 
+  AssetName: 
+  version: 3
+--- !u!1 &1902956262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+  m_PrefabInternal: {fileID: 1058155443}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1902956263}
+  - 114: {fileID: 1902956264}
+  m_Layer: 0
+  m_Name: Titanic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1902956263
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: e82b305ded88c5f46ab97a0bdd7850d5, type: 2}
+  m_PrefabInternal: {fileID: 1058155443}
+  m_GameObject: {fileID: 1902956262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.53921366, y: .863366127, z: 1.11204243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &1902956264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: e82b305ded88c5f46ab97a0bdd7850d5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1058155443}
+  m_GameObject: {fileID: 1902956262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a16c2a184dfae42bb578dccf193e04, type: 3}
+  m_Name: 
+  map: {fileID: 2800000, guid: 0d3a952723013974c8282eaaeee12a14, type: 3}
 --- !u!1 &2144165274
 GameObject:
   m_ObjectHideFlags: 0

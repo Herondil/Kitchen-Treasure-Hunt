@@ -2,27 +2,41 @@ using System;
 using UnityEngine;
 using System.Collections;
 
-public class CachingLoadExample : MonoBehaviour {
-	public string BundleURL;
+public enum levelList{
+	JUNGLE,
+	TEMPLE,
+	CAVERN,
+	PYRAMID,
+	TITANIC = 0
+}
+
+public class AssetLoader : MonoBehaviour {
+	public string[] BundleURL;
 	public string AssetName;
 	public int version;
 
 	void Start() {
 		//StartCoroutine (DownloadAndCache());
 	}
+	
+	// 0 titanic
+	public void LoadMap(levelList index){
+		StartCoroutine(DownloadAndCache(index));
+	}
 
-	IEnumerator DownloadAndCache (){
+	IEnumerator DownloadAndCache (levelList index){
 		while (!Caching.ready)
 			yield return null;
 
 		// Load the AssetBundle file from Cache if it exists with the same version or download and store it in the cache
-		using(WWW www = WWW.LoadFromCacheOrDownload (BundleURL, version)){
+		using(WWW www = WWW.LoadFromCacheOrDownload (BundleURL[(int)index], version)){
 			yield return www;
 			if (www.error != null)
 				throw new Exception("WWW download had an error:" + www.error);
 			AssetBundle bundle = www.assetBundle;
-			if (AssetName == "")
+			if (AssetName == ""){
 				Instantiate(bundle.mainAsset);
+			}
 			else
 				Instantiate(bundle.Load(AssetName));
                 	// Unload the AssetBundles compressed contents to conserve memory
