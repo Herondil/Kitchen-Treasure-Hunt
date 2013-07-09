@@ -32,4 +32,12 @@ public class SceneManager : MonoBehaviour {
 		gameScript.enabled  = false;
 		scoreScript.enabled = true;
 	}
+	
+	public void ReturnToMenu(){
+		/*
+		menuScript.enabled  = true;
+		scoreScript.enabled = false;
+		*/
+		Application.LoadLevel(Application.loadedLevel);
+	}
 }

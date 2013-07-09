@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
 	
-	public Rect scoreRect;
+	public Rect scoreRect, returnRect;
 	
 	ArrayList familles;
 	int points = 0;
@@ -40,6 +40,11 @@ public class ScoreManager : MonoBehaviour {
 	void OnGUI(){
 		
 		GUI.Label(scoreRect,"Score : "+points);
+		
+		
+		if (GUI.Button(returnRect,"Back")){
+			this.GetComponent<SceneManager>().ReturnToMenu();
+		}
 	}
 	
 	public int CalculateTotalPoints (Inventory inventory) {

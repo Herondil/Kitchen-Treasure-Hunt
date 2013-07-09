@@ -20,6 +20,7 @@ public class AssetLoader : MonoBehaviour {
 	void Start() {
 		//StartCoroutine (DownloadAndCache());
 		
+		//if not already loaded
 		LoadMap(levelList.TITANIC, () => { });
 	}
 	
