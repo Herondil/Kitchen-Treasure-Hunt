@@ -31,6 +31,9 @@ public class SceneManager : MonoBehaviour {
 	public void EndRun(){
 		gameScript.enabled  = false;
 		scoreScript.enabled = true;
+		
+		GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMotor>().canControl = false;
+		GameObject.FindGameObjectWithTag("Player").GetComponent<MouseLook>().enabled = false;
 	}
 	
 	public void ReturnToMenu(){

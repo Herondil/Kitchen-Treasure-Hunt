@@ -150,4 +150,9 @@ public class GameManager : MonoBehaviour {
 		
 		currentRunTime += time;
 	}
+	
+	public float GetRunTime () {
+		
+		return currentRunTime;
+	}
 }

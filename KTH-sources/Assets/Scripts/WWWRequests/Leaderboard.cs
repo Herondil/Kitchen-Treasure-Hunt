@@ -10,6 +10,9 @@ public class Leaderboard : MonoBehaviour {
 	public string getLastScoreURL;
 	
 	public Rect leaderboardListGUI;
+	public GUIStyle leaderboardStyle;
+	
+	string leaderboardResponse = "";
 	
 	ScoreManager score;
 	
@@ -18,10 +21,36 @@ public class Leaderboard : MonoBehaviour {
 		
 		score = GetComponent<ScoreManager>();
 		
-		GetLeaderboard();
+		//GetLeaderboard();
 		
 		// TEST
-		AddEntryToLeaderboard("TOTO", 99999999);
+		//AddEntryToLeaderboard("TOTO", 99999999);
+	}
+	
+	void OnGUI() {
+		
+		if(leaderboardResponse.Length > 0) {
+			
+			var test = JSON.Parse(leaderboardResponse);
+			
+			int j = 0;
+		
+			foreach (var i in test.Childs) {
+				
+				float x = leaderboardListGUI.x;
+				float y = leaderboardListGUI.y + (j*leaderboardListGUI.height);
+				float w = leaderboardListGUI.width;
+				float h = leaderboardListGUI.height;
+				
+				GUI.Label(
+					new Rect(x, y, w, h)
+					,i["name"].Value+" : "+i["score"].Value,
+					leaderboardStyle
+				);
+				
+				j++;
+			}
+		}
 	}
 	
 	public delegate void OnServerResponse (string response);
@@ -72,26 +101,7 @@ public class Leaderboard : MonoBehaviour {
 	
 	void ParseLeaderboard (string response) {
 		
-		var test = JSON.Parse(response);
-		
-		int j = 0;
-		
-		foreach (var i in test.Childs) {
-			
-			Debug.Log (i["name"].Value+" : "+i["score"].Value);
-			
-			float x = leaderboardListGUI.x;
-			float y = leaderboardListGUI.y + (j*leaderboardListGUI.height);
-			float w = leaderboardListGUI.width;
-			float h = leaderboardListGUI.height;
-			
-			GUI.Label(
-				new Rect(x, y, w, h)
-				,i["name"].Value+" : "+i["score"].Value
-			);
-			
-			j++;
-		}
+		leaderboardResponse = response;
 		
 	}
 	
@@ -99,7 +109,7 @@ public class Leaderboard : MonoBehaviour {
 		
 		Debug.Log ("Entry Added");
 		
-		// execute le code
+		this.GetComponent<SceneManager>().ReturnToMenu();
 	}
 	
 	void ReturnLastScore (string response) {
