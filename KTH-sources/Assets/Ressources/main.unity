@@ -823,7 +823,7 @@ MonoBehaviour:
   player: {fileID: 100002, guid: 7a9d8b73f0a103c4ba9890c34734bb40, type: 2}
   cube: {fileID: 100000, guid: 76690bdf01bd9d1489079d8356f5c1b4, type: 2}
   mazeGround: {fileID: 100000, guid: bb8508881c997ac4ca5644b09d0ff301, type: 2}
-  map: {fileID: 2800000, guid: d756b32d4b2703c44b9c726a1731ee33, type: 3}
+  jungleMap: {fileID: 2800000, guid: d756b32d4b2703c44b9c726a1731ee33, type: 3}
 --- !u!114 &1894208485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55401b4064ff154429695c80b83e60b3, type: 3}
   m_Name: 
-  BundleURL: []
+  titanicURL: http://perrineboissieres.com/kitchen-treasure-hunt/bundles/titanic.unity3d
   AssetName: 
   version: 3
 --- !u!114 &1894208488
@@ -972,7 +972,13 @@ MonoBehaviour:
   m_Name: 
   addEntryToLeaderboardURL: http://perrineboissieres.com/kitchen-treasure-hunt/add-to-leaderboard.php
   getLeaderboardURL: http://perrineboissieres.com/kitchen-treasure-hunt/leaderboard.php
-  getLastScoreURL: http://perrineboissieres.com/kitchen-treasure-hunt/get-last-score.php
+  getLastScoreURL: 
+  leaderboardListGUI:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!1 &1902956262
 GameObject:
   m_ObjectHideFlags: 0
