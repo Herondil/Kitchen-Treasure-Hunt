@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Name: 
   titanicURL: http://perrineboissieres.com/kitchen-treasure-hunt/bundles/titanic.unity3d
   AssetName: 
-  version: 3
+  version: 9
 --- !u!114 &1894208488
 MonoBehaviour:
   m_ObjectHideFlags: 0
