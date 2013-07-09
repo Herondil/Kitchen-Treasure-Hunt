@@ -10,6 +10,8 @@ public class ScoreManager : MonoBehaviour {
 	Hashtable familleCompletion;
 	
 	Leaderboard leaderboard;
+	bool displayTestBox;
+	string pseudo = "AAA";
 	
 	// Use this for initialization
 	void Start () {
@@ -28,6 +30,8 @@ public class ScoreManager : MonoBehaviour {
 		
 		CalculateTotalPoints(player.GetComponent<Inventory>());
 		
+		displayTestBox = false;
+		
 		// On récupère les infos
 		leaderboard.GetLastScore();
 	}
@@ -40,11 +44,22 @@ public class ScoreManager : MonoBehaviour {
 	void OnGUI(){
 		
 		GUI.Label(scoreRect,"Score : "+points);
+		
+		if(displayTestBox) {
+			
+			pseudo = GUI.TextField(new Rect(300, 300, 200, 30), pseudo, 7);
+			if(GUI.Button(new Rect(300, 340, 200, 30), "Envoyer son score")) {
+				
+				leaderboard.AddEntryToLeaderboard(pseudo, points);
+			}
+		}
 	}
 	
 	public int CalculateTotalPoints (Inventory inventory) {
 		
 		ArrayList items = inventory.GetInventory();
+		
+		points = 0;
 		
 		for(int i = 0; i < items.Count; i++) {
 			
@@ -72,11 +87,9 @@ public class ScoreManager : MonoBehaviour {
 	
 	public void OnLastScoreRecovered (int score) {
 		
-		Debug.Log(score);
-		
 		if(score <= points) {
 			
-			// Afficher un input pour entrer son nom
+			displayTestBox = true;
 		}
 	}
 }
