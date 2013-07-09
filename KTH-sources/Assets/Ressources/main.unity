@@ -991,8 +991,8 @@ MonoBehaviour:
     height: 20
   leaderboardRect:
     serializedVersion: 2
-    x: 168.100006
-    y: 94.6999969
+    x: 122
+    y: 79
     width: 104.550003
     height: 50.7200012
   selGridInt: 2
@@ -1007,6 +1007,7 @@ MonoBehaviour:
   - Grid 2
   - Grid 3
   - Grid 4
+  lb: {fileID: 1491777486}
 --- !u!4 &1491777493
 Transform:
   m_ObjectHideFlags: 0
