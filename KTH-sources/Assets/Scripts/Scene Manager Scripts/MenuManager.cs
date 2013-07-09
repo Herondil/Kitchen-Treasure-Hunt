@@ -29,6 +29,13 @@ public class MenuManager : MonoBehaviour {
 	public Rect levelSelectRect;
     public string[] selStrings = new string[] {"Jungle", "Cavern", "Temple", "Pyramid", "Titanic"};
 	
+	//component
+	AssetLoader assetLoader;
+	
+	void Awake(){
+		assetLoader = this.GetComponent<AssetLoader>();
+	}
+	
 	
 	// Use this for initialization
 	void Start () {
@@ -98,8 +105,10 @@ public class MenuManager : MonoBehaviour {
 		}
 			
 		if(PlayerPrefs.GetString("HasUnlockedTitanic") == ""){
-			if (GUI.Button(unlockTitanic,"unlockTitanic"))
+			if (GUI.Button(unlockTitanic,"unlockTitanic")){
+				assetLoader.LoadMap(levelList.TITANIC);
 				PlayerPrefs.SetString("HasUnlockedTitanic", "yes");
+			}
 		}
 	}
 }
