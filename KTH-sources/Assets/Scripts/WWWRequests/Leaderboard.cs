@@ -1,7 +1,7 @@
 
 using UnityEngine;
 using System.Collections;
-using SimpleJSON;
+using LitJson;
 
 public class Leaderboard : MonoBehaviour {
 	
@@ -31,25 +31,22 @@ public class Leaderboard : MonoBehaviour {
 		
 		if(leaderboardResponse.Length > 0) {
 			
-			var test = JSON.Parse(leaderboardResponse);
-			
-			int j = 0;
+			JsonData test = JsonMapper.ToObject(leaderboardResponse);
 		
-			foreach (var i in test.Childs) {
+			for(int i = 0; i < test.Count; i++) {
 				
 				float x = leaderboardListGUI.x;
-				float y = leaderboardListGUI.y + (j*leaderboardListGUI.height);
+				float y = leaderboardListGUI.y + (i*leaderboardListGUI.height);
 				float w = leaderboardListGUI.width;
 				float h = leaderboardListGUI.height;
 				
 				GUI.Label(
 					new Rect(x, y, w, h)
-					,i["name"].Value+" : "+i["score"].Value,
+					,test[i]["name"]+" : "+test[i]["score"],
 					leaderboardStyle
 				);
-				
-				j++;
 			}
+			//Debug.Log (test);
 		}
 	}
 	
