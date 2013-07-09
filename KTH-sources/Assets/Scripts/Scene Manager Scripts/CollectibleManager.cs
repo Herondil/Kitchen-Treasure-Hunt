@@ -15,7 +15,9 @@ public class CollectibleManager : MonoBehaviour {
 		}
 		
 		if(pixColor == Color.cyan){
-			Instantiate(this.fourchette, new Vector3(x, 0, y), Quaternion.identity);
+			GameObject tempObj = Instantiate(this.fourchette, new Vector3(x, 0, y), Quaternion.identity) as GameObject;
+			//tempObj.transform.eulerAngles.y = 3.4f; // = (float)Random.Range(0, 360);
+			//tempObj.transform.rotation.eulerAngles.y = Random.Range(0,360);
 		}
 	}
 	
