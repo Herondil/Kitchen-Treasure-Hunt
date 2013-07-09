@@ -1,0 +1,10 @@
+FAMILLES
+
++ Set de table de Kui-Yere-Daur (10000)
+	- Fourchette de Kui-Yere-Daur (1000)
+	- Assiette de Kui-Yere-Daur (3000)
+	- Couteau de Kui-Yere-Daur (2500)
+	
++ Poêles jumelles légendaires (12000)
+	- Poêle à frire de Raie-Ponsse (5000)
+	- Poêle à crèpes de Shande L'Heure (5000)

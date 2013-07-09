@@ -109,6 +109,7 @@
      <Compile Include="Assets\Scripts\Collectibles\AbstractCollectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\CollectibleInterface.cs" />
      <Compile Include="Assets\Scripts\Collectibles\EndCollectible.cs" />
+     <Compile Include="Assets\Scripts\Collectibles\Famille.cs" />
      <Compile Include="Assets\Scripts\Collectibles\Monster.cs" />
      <Compile Include="Assets\Scripts\Collectibles\PointsCollectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\ShieldCollectible.cs" />
@@ -134,14 +135,14 @@
      <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
      <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\AstarPathfindingProject\link.xml" />
- <Reference Include="Assets\Plugins\ICSharpCode.SharpZipLib">
- <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
- </Reference>
  <Reference Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\Ionic.Zip.Reduced">
  <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Assets\AstarPathfindingProject\Plugins\JsonFx\JsonFx.Json">
  <HintPath>Assets\AstarPathfindingProject\Plugins\JsonFx\JsonFx.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Assets\Plugins\ICSharpCode.SharpZipLib">
+ <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
