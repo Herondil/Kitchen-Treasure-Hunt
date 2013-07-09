@@ -752,7 +752,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d18dbac89844994584f130c420b0675, type: 3}
   m_Name: 
-  runTimeLength: 5
+  runTimeLength: 50
   endDelay: 2
   introDelay: 2
   timeRect:
