@@ -36,8 +36,9 @@ public class Inventory : MonoBehaviour {
 		}
 		if(shield > 0 && shield < strength) {
 			
-			shield = 0;
 			strength -= shield;
+			shield = 0;
+			
 		}
 		
 		if(inventory.Count > 0) {
